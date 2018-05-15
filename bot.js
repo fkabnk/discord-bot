@@ -1,5 +1,6 @@
 const Discord = require("discord.js");
 const config = require("./config.json");
+const webshot = require('webshot');
 
 const client = new Discord.Client();
 
@@ -58,7 +59,18 @@ client.on("ready", () => {
             url = url + "%20" + args[i];
           }
         }
-        webshot(url, "temp.png", function(err){
+
+        var options = {
+          shotSize:{
+            width:'all',
+            height:3200
+          },
+          shotOffset:{
+            top:750
+          }
+        }
+
+        webshot(url, "temp.png", options, function(err){
           message.channel.send(`Testing message.`, {
             files: [
               "./temp.png"
