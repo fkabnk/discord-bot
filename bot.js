@@ -58,7 +58,7 @@ client.on("ready", () => {
             url = url + "%20" + args[i];
           }
         }
-        console.log(url);
+        message.channel.send(url);
     }
 
     if(command === "ping") {
