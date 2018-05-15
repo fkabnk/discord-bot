@@ -45,8 +45,12 @@ client.on("ready", () => {
     console.log(command)
     // Let's go with a few common example commands! Feel free to delete or change those.
     
+    switch (command){
+      case "test":
+        message.channel.send("We back");
+    }
+
     if(command === "ping") {
-        console.log("inPing")
       // Calculates ping between sending a message and editing it, giving a nice round-trip latency.
       // The second ping is an average latency between the bot and the websocket server (one-way, not round-trip)
       const m = await message.channel.send("Ping?");
