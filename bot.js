@@ -58,7 +58,13 @@ client.on("ready", () => {
             url = url + "%20" + args[i];
           }
         }
-        message.channel.send(url);
+        webshot(url, "temp.png", function(err){
+          message.channel.send(`Testing message.`, {
+            files: [
+              "./temp.png"
+            ]
+          });
+        });
     }
 
     if(command === "ping") {
