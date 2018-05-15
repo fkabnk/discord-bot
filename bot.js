@@ -49,7 +49,7 @@ client.on("ready", () => {
     switch (command){
       case "test":
         message.channel.send("We back");
-      case "fort":
+      case "fortsolo":
         let url = "https://fortnitetracker.com/profile/pc/";
         for(var i = 0; i < args.length; i++){
           if(i == 0){
@@ -63,15 +63,15 @@ client.on("ready", () => {
         var options = {
           shotSize:{
             width:'all',
-            height:3200
+            height:700
           },
           shotOffset:{
-            top:750
+            top:1300
           }
         }
 
         webshot(url, "temp.png", options, function(err){
-          message.channel.send(`Testing message.`, {
+          message.channel.send(url, {
             files: [
               "./temp.png"
             ]
