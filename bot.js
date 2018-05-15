@@ -48,6 +48,17 @@ client.on("ready", () => {
     switch (command){
       case "test":
         message.channel.send("We back");
+      case "fort":
+        let url = "https://fortnitetracker.com/profile/pc/";
+        for(var i = 0; i < args.length; i++){
+          if(i == 0){
+            url = url + args[i];
+          }
+          else{
+            url = url + "%20" + args[i];
+          }
+        }
+        console.log(url);
     }
 
     if(command === "ping") {
